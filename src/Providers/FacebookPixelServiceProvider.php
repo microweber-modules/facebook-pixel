@@ -17,6 +17,7 @@ class FacebookPixelServiceProvider extends PackageServiceProvider
         $package->name('microweber-module-facebook_pixel');
         $package->hasViews('microweber-module-facebook_pixel');
         $package->hasRoute('api');
+        $package->hasRoute('web');
         $package->hasRoute('admin');
         $package->runsMigrations(true);
     }
@@ -41,6 +42,7 @@ class FacebookPixelServiceProvider extends PackageServiceProvider
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
         $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         parent::register();
 
