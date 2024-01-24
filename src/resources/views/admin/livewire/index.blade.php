@@ -9,9 +9,39 @@
         </div>
     </div>
 
-    <div class="d-flex mb-3 mt-4 gap-3">
+    <div class="mb-3 mt-4 gap-3">
 
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <label>Facebook export feed url</label>
+                        <input class="form-control" value="{{route('admin.facebook-pixel.export-feed', $exportSecretKey)}}" />
+                    </div>
+                </div>
+            </div>
 
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div>
+                        <label>
+                            {{_e('Facebook pixel id')}}
+                        </label>
+                        <input class="form-control" placeholder="{{_e('Place your facebook pixel id')}}" value="" />
+                    </div>
+                    <div class="mt-4">
+                    <label>
+                            {{_e('Facebook access token')}}
+                        </label>
+                        <input class="form-control" placeholder="{{_e('Place your facebook access token')}}" value="" />
+                    </div>
+                    <div class="mt-4">
+                        <label>
+                            {{_e('Test event ode')}}
+                        </label>
+                        <input class="form-control" placeholder="{{_e('Place your test event code')}}" value="TEST12345" />
+                    </div>
+                </div>
+            </div>
 
     </div>
 

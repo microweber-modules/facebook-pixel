@@ -13,7 +13,7 @@ class FacebookPixelExportController
         if (empty($exportFeedSecret)) {
             $exportFeedSecret = rand(111111, 999999);
         }
-        
+
         $feedSecretFromRequest = $request->get('feed_secret', false);
         if ($exportFeedSecret !== $feedSecretFromRequest) {
             return response('Unauthorized.', 401);

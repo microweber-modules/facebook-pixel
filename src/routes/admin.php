@@ -6,6 +6,6 @@ Route::name('admin.facebook-pixel.')
     ->namespace('MicroweberPackages\Modules\FacebookPixel\Http\Controllers\Admin')
     ->group(function () {
 
-       Route::get('/', 'AdminFacebookPixelController@index')->name('index');
+       Route::get('/', 'AdminFacebookPixelController@index')->name('export-feed');
 
     });
