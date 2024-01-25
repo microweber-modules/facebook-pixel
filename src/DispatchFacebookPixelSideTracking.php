@@ -3,16 +3,7 @@
 namespace MicroweberPackages\Modules\FacebookPixel;
 
 include_once __DIR__ . '../../vendor/autoload.php';
-use AlexWestergaard\PhpGa4\Analytics;
-use AlexWestergaard\PhpGa4\Event\AddPaymentInfo;
-use AlexWestergaard\PhpGa4\Event\AddShippingInfo;
-use AlexWestergaard\PhpGa4\Event\AddToCart;
-use AlexWestergaard\PhpGa4\Event\BeginCheckout;
-use AlexWestergaard\PhpGa4\Event\Login;
-use AlexWestergaard\PhpGa4\Event\PageView;
-use AlexWestergaard\PhpGa4\Event\Purchase;
-use AlexWestergaard\PhpGa4\Event\Signup;
-use AlexWestergaard\PhpGa4\Item;
+
 use FacebookAds\Api;
 use FacebookAds\Logger\CurlLogger;
 use FacebookAds\Object\ServerSide\ActionSource;
@@ -23,7 +14,6 @@ use FacebookAds\Object\ServerSide\Event;
 use FacebookAds\Object\ServerSide\EventRequest;
 use FacebookAds\Object\ServerSide\UserData;
 use Illuminate\Support\Facades\Session;
-use MicroweberPackages\Modules\SiteStats\DTO\GA4Events\Conversion;
 use MicroweberPackages\SiteStats\Models\StatsEvent;
 use MicroweberPackages\SiteStats\UtmVisitorData;
 
