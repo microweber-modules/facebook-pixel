@@ -88,47 +88,8 @@ class FacebookPixel
 
     public function addToCart($product)
     {
-        $api = Api::init(null, null, $this->accessToken);
-        $api->setLogger(new CurlLogger());
 
-        $userData = (new UserData())
-            //->setEmails(array('joe@eg.com'))
-           // ->setPhones(array('12345678901', '14251234567'))
-            // It is recommended to send Client IP and User Agent for Conversions API Events.
-            ->setExternalId(Session::getId())
-            ->setClientIpAddress($_SERVER['REMOTE_ADDR'])
-            ->setClientUserAgent($_SERVER['HTTP_USER_AGENT']);
 
-        $content = (new Content())
-            ->setProductId($product['id'])
-            ->setTitle($product['name'])
-            ->setItemPrice($product['price'])
-            ->setQuantity($product['quantity'])
-            ->setDeliveryCategory(DeliveryCategory::HOME_DELIVERY);
-
-        $customData = (new CustomData())
-            ->setContents(array($content))
-            ->setCurrency('BGN')
-            ->setValue($product['price']);
-
-        $event = (new Event())
-            ->setEventName('AddToCart')
-            ->setEventId($this->eventId)
-            ->setEventTime(time())
-            ->setEventSourceUrl(url()->current())
-            ->setUserData($userData)
-            ->setCustomData($customData)
-            ->setActionSource(ActionSource::WEBSITE);
-
-        $events = array();
-        array_push($events, $event);
-
-        $request = (new EventRequest($this->pixelId))
-            ->setTestEventCode($this->testEventCode)
-            ->setEvents($events);
-        $response = $request->execute();
-
-        return $response;
     }
 
     public function newPurchase($purchaseData)
