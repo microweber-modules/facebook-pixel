@@ -13,5 +13,7 @@
     ],
     "require": {
         "facebook/php-business-sdk": "^17.0"
-    }
+    },
+    "type": "microweber-module",
+    "target-dir": "calendly"
 }
