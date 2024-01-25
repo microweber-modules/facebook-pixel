@@ -1,5 +1,6 @@
 {
     "name": "microweber-modules/facebook_pixel",
+    "description": "Facebook Pixel",
     "autoload": {
         "psr-4": {
             "MicroweberPackages\\Modules\\FacebookPixel\\": "src/"
