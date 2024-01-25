@@ -36,19 +36,19 @@
                         <label>
                             {{_e('Facebook pixel id')}}
                         </label>
-                        <input class="form-control" placeholder="{{_e('Place your facebook pixel id')}}" value="" />
-                    </div>
-                    <div class="mt-4">
-                    <label>
-                            {{_e('Facebook access token')}}
-                        </label>
-                        <input class="form-control" placeholder="{{_e('Place your facebook access token')}}" value="" />
+                        <livewire:microweber-option::text placeholder="Place your facebook pixel id" optionKey="facebook_pixel_id" optionGroup="facebook_pixel" />
                     </div>
                     <div class="mt-4">
                         <label>
-                            {{_e('Test event ode')}}
+                            {{_e('Facebook access token')}}
                         </label>
-                        <input class="form-control" placeholder="{{_e('Place your test event code')}}" value="TEST12345" />
+                        <livewire:microweber-option::text placeholder="Place your facebook access token" optionKey="facebook_access_token" optionGroup="facebook_pixel" />
+                    </div>
+                    <div class="mt-4">
+                        <label>
+                            {{_e('Test event code')}}
+                        </label>
+                        <livewire:microweber-option::text placeholder="Place your test event code" optionKey="facebook_test_event_code" optionGroup="facebook_pixel" />
                     </div>
                 </div>
             </div>
