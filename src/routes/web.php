@@ -6,6 +6,6 @@ Route::name('facebook-pixel.')
     ->namespace('MicroweberPackages\Modules\FacebookPixel\Http\Controllers')
     ->group(function () {
 
-        Route::get('/export-feed', 'FacebookPixelExportController@index')->name('index');
+        Route::get('/export-feed', 'FacebookPixelExportController@index')->name('export-feed');
 
     });

@@ -11,7 +11,7 @@ class FacebookPixelExportController
 
         $exportFeedSecret = get_option('fb_pixel_export_feed_secret', 'facebook_pixel');
         if (empty($exportFeedSecret)) {
-            $exportFeedSecret = rand(111111, 999999);
+            $exportFeedSecret = md5(time() . rand(111111, 999999));
         }
 
         $feedSecretFromRequest = $request->get('feed_secret', false);

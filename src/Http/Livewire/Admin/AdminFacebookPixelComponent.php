@@ -11,6 +11,14 @@ class AdminFacebookPixelComponent extends AdminComponent
 
     public function render()
     {
-        return view('facebook_pixel::admin.livewire.index');
+        $exportSecretKey = get_option('fb_pixel_export_feed_secret', 'facebook_pixel');
+        if (empty($exportSecretKey)) {
+            $exportSecretKey = md5(time() . rand(111111, 999999));
+            save_option('fb_pixel_export_feed_secret', $exportSecretKey, 'facebook_pixel');
+        }
+
+        return view('facebook_pixel::admin.livewire.index', [
+            'exportSecretKey' => $exportSecretKey
+        ]);
     }
 }

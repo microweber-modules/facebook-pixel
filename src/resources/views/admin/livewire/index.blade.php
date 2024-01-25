@@ -13,9 +13,19 @@
 
             <div class="card">
                 <div class="card-body">
-                    <div>
-                        <label>Facebook export feed url</label>
-                        <input class="form-control" value="{{route('admin.facebook-pixel.export-feed', $exportSecretKey)}}" />
+                    <div class="d-flex gap-2">
+                        <div style="width:100%">
+                            <label>Facebook export feed url</label>
+                            <input class="form-control" value="{{route('facebook-pixel.export-feed')}}?feed_secret={{$exportSecretKey}}" />
+                        </div>
+                        <div>
+                            <div>&nbsp;</div>
+                            <div>
+                                <a class="btn btn-outline-success" href="{{route('facebook-pixel.export-feed')}}?feed_secret={{$exportSecretKey}}">
+                                    {{_e('Download feed')}}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
