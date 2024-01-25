@@ -1,6 +1,7 @@
 <?php
-
 namespace MicroweberPackages\Modules\FacebookPixel;
+
+include_once __DIR__ . '../../vendor/autoload.php';
 
 use FacebookAds\Api;
 use FacebookAds\Logger\CurlLogger;
@@ -48,21 +49,22 @@ class FacebookPixel
 
         $contents = [];
         $contentIds = [];
+
         foreach ($cartData['products'] as $product) {
-            $contentIds[] = $product['attributes']['id'];
+            $contentIds[] = $product['id'];
             $contents[] = (new Content())
-                ->setProductId($product['attributes']['id'])
-                ->setTitle($product['name'])
-                ->setItemPrice($product['priceNumeric'])
-                ->setQuantity($product['quantity'])
+                ->setProductId($product['id'])
+                ->setTitle($product['title'])
+                ->setItemPrice($product['price'])
+                ->setQuantity($product['qty'])
                 ->setDeliveryCategory(DeliveryCategory::HOME_DELIVERY);
         }
 
         $customData = (new CustomData())
            ->setContents($contents)
             ->setContentIds($contentIds)
-            ->setCurrency('BGN')
-            ->setValue($cartData['totalNumeric']);
+            ->setCurrency($cartData['currency'])
+            ->setValue($cartData['total']);
 
         $event = (new Event())
             ->setEventName('ViewCart')

@@ -12,6 +12,6 @@
         }
     ],
     "require": {
-        "facebook/php-business-sdk": "*"
+        "facebook/php-business-sdk": "^17.0"
     }
 }

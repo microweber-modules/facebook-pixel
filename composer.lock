@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b38a2d0fe0a45363830d2cb53b359bc8",
+    "content-hash": "9f6422a9dcb43a3504ef34a6ca8986c2",
     "packages": [
         {
             "name": "facebook/php-business-sdk",
-            "version": "19.0.0",
+            "version": "17.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-business-sdk.git",
-                "reference": "4b976a8c7b4ebf0034a0e327f4e03462d944e75d"
+                "reference": "7df79347120112b21b632e7d080406ea628b1758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-business-sdk/zipball/4b976a8c7b4ebf0034a0e327f4e03462d944e75d",
-                "reference": "4b976a8c7b4ebf0034a0e327f4e03462d944e75d",
+                "url": "https://api.github.com/repos/facebook/facebook-php-business-sdk/zipball/7df79347120112b21b632e7d080406ea628b1758",
+                "reference": "7df79347120112b21b632e7d080406ea628b1758",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             ],
             "support": {
                 "issues": "https://github.com/facebook/facebook-php-business-sdk/issues",
-                "source": "https://github.com/facebook/facebook-php-business-sdk/tree/19.0.0"
+                "source": "https://github.com/facebook/facebook-php-business-sdk/tree/17.0.2"
             },
-            "time": "2024-01-23T23:34:35+00:00"
+            "time": "2023-08-08T16:33:40+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

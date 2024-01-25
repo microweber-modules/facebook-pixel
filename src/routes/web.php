@@ -8,4 +8,12 @@ Route::name('facebook-pixel.')
 
         Route::get('/export-feed', 'FacebookPixelExportController@index')->name('export-feed');
 
+        Route::get('/faawf', function () {
+
+            event(new \MicroweberPackages\SiteStats\Events\PingStatsEvent([
+                'referer'=>site_url(),
+            ]));
+
+        });
+
     });
