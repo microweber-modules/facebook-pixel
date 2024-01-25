@@ -31,21 +31,21 @@
             </div>
 
             <div class="card mt-4">
-                <div class="card-body">
+                <div class="card-body mb-4">
                     <div>
-                        <label>
+                        <label class="live-edit-label">
                             {{_e('Facebook pixel id')}}
                         </label>
                         <livewire:microweber-option::text placeholder="Place your facebook pixel id" optionKey="facebook_pixel_id" optionGroup="facebook_pixel" />
                     </div>
                     <div class="mt-4">
-                        <label>
+                        <label class="live-edit-label">
                             {{_e('Facebook access token')}}
                         </label>
                         <livewire:microweber-option::text placeholder="Place your facebook access token" optionKey="facebook_access_token" optionGroup="facebook_pixel" />
                     </div>
                     <div class="mt-4">
-                        <label>
+                        <label class="live-edit-label">
                             {{_e('Test event code')}}
                         </label>
                         <livewire:microweber-option::text placeholder="Place your test event code" optionKey="facebook_test_event_code" optionGroup="facebook_pixel" />
