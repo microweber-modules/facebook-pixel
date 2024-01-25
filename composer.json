@@ -1,0 +1,17 @@
+{
+    "name": "microweber-modules/facebook_pixel",
+    "autoload": {
+        "psr-4": {
+            "MicroweberPackages\\Modules\\FacebookPixel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bozhidar Slaveykov",
+            "email": "bobi@microweber.com"
+        }
+    ],
+    "require": {
+        "facebook/php-business-sdk": "*"
+    }
+}
