@@ -11,9 +11,7 @@ $config['version'] = 1.2;
 $config['settings'] = [];
 
 // Here is the index route for admin panel
-$config['settings']['routes']['admin'] = [
-    'admin'=>'admin.facebook_pixel.index'
-];
+$config['settings']['routes']['admin'] = 'admin.facebook_pixel.index';
 
 $config['settings']['autoload_namespace'] = [
     [
