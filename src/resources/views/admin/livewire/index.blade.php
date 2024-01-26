@@ -32,24 +32,50 @@
 
             <div class="card mt-4">
                 <div class="card-body mb-4">
-                    <div>
-                        <label class="live-edit-label">
-                            {{_e('Facebook pixel id')}}
-                        </label>
-                        <livewire:microweber-option::text placeholder="Place your facebook pixel id" optionKey="facebook_pixel_id" optionGroup="facebook_pixel" />
+
+                    @php
+                        $facebookPixelEnabled = false;
+                        $getFacebookPixelIsEnabled = get_option('is_enabled', 'facebook_pixel');
+                        if ($getFacebookPixelIsEnabled == 1) {
+                            $facebookPixelEnabled = true;
+                        }
+                    @endphp
+
+                    <div x-data="{'facebookPixelEnabled': '{{$facebookPixelEnabled}}'}">
+                        <div @mw-option-saved.window="function() {
+                            if ($event.detail.optionKey == 'is_enabled') {
+                                facebookPixelEnabled = $event.detail.optionValue;
+                            }
+                            }">
+                        </div>
+                        <div>
+                            <label class="live-edit-label">
+                                {{_e('Enable Facebook Pixel')}}
+                            </label>
+                            <livewire:microweber-option::toggle optionKey="is_enabled" optionGroup="facebook_pixel" />
+                        </div>
+                        <div x-show="facebookPixelEnabled == '1'">
+                            <div>
+                                <label class="live-edit-label">
+                                    {{_e('Facebook pixel id')}}
+                                </label>
+                                <livewire:microweber-option::text placeholder="Place your facebook pixel id" optionKey="facebook_pixel_id" optionGroup="facebook_pixel" />
+                            </div>
+                            <div class="mt-4">
+                                <label class="live-edit-label">
+                                    {{_e('Facebook access token')}}
+                                </label>
+                                <livewire:microweber-option::text placeholder="Place your facebook access token" optionKey="facebook_access_token" optionGroup="facebook_pixel" />
+                            </div>
+                            <div class="mt-4">
+                                <label class="live-edit-label">
+                                    {{_e('Test event code')}}
+                                </label>
+                                <livewire:microweber-option::text placeholder="Place your test event code" optionKey="facebook_test_event_code" optionGroup="facebook_pixel" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-4">
-                        <label class="live-edit-label">
-                            {{_e('Facebook access token')}}
-                        </label>
-                        <livewire:microweber-option::text placeholder="Place your facebook access token" optionKey="facebook_access_token" optionGroup="facebook_pixel" />
-                    </div>
-                    <div class="mt-4">
-                        <label class="live-edit-label">
-                            {{_e('Test event code')}}
-                        </label>
-                        <livewire:microweber-option::text placeholder="Place your test event code" optionKey="facebook_test_event_code" optionGroup="facebook_pixel" />
-                    </div>
+
                 </div>
             </div>
 

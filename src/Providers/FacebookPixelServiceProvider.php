@@ -44,8 +44,11 @@ class FacebookPixelServiceProvider extends PackageServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../routes/admin.php');
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        $this->app->register(\MicroweberPackages\Modules\FacebookPixel\Providers\FacebookPixelEventsServiceProvider::class);
-
+        $getFacebookPixelIsEnabled = get_option('is_enabled', 'facebook_pixel');
+        if ($getFacebookPixelIsEnabled) {
+            $this->app->register(\MicroweberPackages\Modules\FacebookPixel\Providers\FacebookPixelEventsServiceProvider::class);
+        }
+        
         parent::register();
 
     }
