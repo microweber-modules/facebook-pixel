@@ -7,7 +7,7 @@ $config['ui_admin_iframe'] = true;
 $config['ui'] = true;
 $config['categories'] = "content";
 $config['position'] = 200;
-$config['version'] = 1.4;
+$config['version'] = 1.5;
 $config['settings'] = [];
 
 // Here is the index route for admin panel
